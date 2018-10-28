@@ -1,0 +1,42 @@
+{
+  "name": "hyperdrive-helpers",
+  "version": "0.0.1",
+  "description": "Helpers for working with Hyperdrives",
+  "main": "index.js",
+  "scripts": {
+    "cover": "tap test/specs/** --coverage-report=html",
+    "lint": "standard",
+    "lint-fix": "standard --fix",
+    "release": "npm test && standard-version && git push origin master && npm publish",
+    "test": "tap test/specs/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trondpet/hyperdrive-helpers.git"
+  },
+  "keywords": [
+    "hyperdrive",
+    "utils",
+    "helpers"
+  ],
+  "author": "Trond K. Pettersen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trondpet/hyperdrive-helpers/issues"
+  },
+  "homepage": "https://github.com/trondpet/hyperdrive-helpers#readme",
+  "dependencies": {
+    "@hyperswarm/network": "0.0.4",
+    "hyperdrive": "^9.14.0",
+    "p-filter": "^1.0.0",
+    "p-map": "^2.0.0",
+    "pino": "^5.8.0"
+  },
+  "devDependencies": {
+    "mockery": "^2.1.0",
+    "sinon": "^7.0.0",
+    "standard": "^12.0.1",
+    "standard-version": "^4.4.0",
+    "tap": "^12.0.1"
+  }
+}
