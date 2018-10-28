@@ -1,5 +1,5 @@
 # hyperdrive-helpers [![Build Status](https://travis-ci.com/trondpet/hyperdrive-helpers.svg?branch=master)](https://travis-ci.com/trondpet/hyperdrive-helpers)
-Helpers for working with Hyperdrives.
+Helpers for working with [hyperdrives](https://github.com/mafintosh/hyperdrive).
 
 ## API
 
