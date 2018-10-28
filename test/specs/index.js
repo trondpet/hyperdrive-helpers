@@ -2,8 +2,9 @@ const tap = require('tap')
 const hyperHelpers = require('../../')
 
 tap.test('exports the dang api', async t => {
-  t.ok(hyperHelpers.addToArchive)
-  t.ok(hyperHelpers.copyToFs)
-  t.ok(hyperHelpers.openArchive)
-  t.ok(hyperHelpers.readArchive)
+  t.equals(typeof hyperHelpers.addToArchive, 'function')
+  t.equals(typeof hyperHelpers.copyToFs, 'function')
+  t.equals(typeof hyperHelpers.openArchive, 'function')
+  t.equals(typeof hyperHelpers.readArchive, 'function')
+  t.end()
 })

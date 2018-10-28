@@ -1,8 +1,7 @@
 const tap = require('tap')
 const fs = require('fs')
 const sinon = require('sinon')
-let copyToFs = require('../../../lib/copy-to-fs')
-
+const copyToFs = require('../../../lib/copy-to-fs')
 const StreamStub = require('../../mocks/stream')
 const DriveStub = require('../../mocks/hyperdrive')
 

@@ -18,7 +18,20 @@ class Drive {
         handler()
       }
     })
-    this.replicate = sinon.stub().returns('archive is replicating')
+    this.replicate = sinon.stub()
+    this.replicate.returns('archive is replicating')
+
+    this.mkdir = sinon.stub()
+    this.mkdir.callsFake((path, cb) => {
+      this._mkDirs = this._mkDirs || []
+      this._mkDirs.push(path)
+      cb(this._mkDirErr)
+    })
+
+    this.readdir = sinon.stub().callsFake((path, reader) => {
+      this._readDirPath = path
+      reader(this._readDirErr, this._readDirFiles)
+    })
   }
 }
 
