@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "cover": "tap test/specs/** --coverage-report=html",
-    "lint": "standard --fix",
+    "lint": "standard",
+    "lint-fix": "standard --fix",
     "release": "npm test && standard-version && git push origin master && npm publish",
     "test": "tap test/specs/**"
   },
