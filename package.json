@@ -1,7 +1,7 @@
 {
   "name": "hyperdrive-helpers",
   "version": "0.0.1",
-  "description": "Helpers for working with Hyperdrives",
+  "description": "Helper utilss for working with hyperdrives",
   "main": "index.js",
   "scripts": {
     "cover": "tap test/specs/** --coverage-report=html",
@@ -19,7 +19,7 @@
     "utils",
     "helpers"
   ],
-  "author": "Trond K. Pettersen",
+  "author": "Trond Pettersen",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/trondpet/hyperdrive-helpers/issues"
