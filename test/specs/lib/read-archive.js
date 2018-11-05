@@ -64,12 +64,12 @@ tap.test('readArchive should handle error while stating single file', async t =>
   t.equals(3, files.length)
 
   const tayne = files[1]
-  t.equals(tayne.path, 'nude-tayne.jpg')
+  t.equals(tayne.path, '/4d3d3d3/nude-tayne.jpg')
   t.notOk(tayne.isFile)
   t.notOk(tayne.isDirectory)
 
   const dane = files[2]
-  t.equals(dane.path, 'dane-cook.png')
+  t.equals(dane.path, '/4d3d3d3/dane-cook.png')
   t.ok(dane.isFile)
   t.ok(dane.isDirectory)
 
