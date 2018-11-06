@@ -1,7 +1,7 @@
 {
   "name": "hyperdrive-helpers",
   "version": "0.0.1",
-  "description": "Helper utilss for working with hyperdrives",
+  "description": "Helper utils for working with hyperdrives",
   "main": "index.js",
   "scripts": {
     "cover": "tap test/specs/** --coverage-report=html",

@@ -9,6 +9,13 @@ class Drive {
     this.readStream = new Stream()
     this.writeStream = new Stream()
 
+    this._writtenFiles = []
+    this._writeFileErr = null
+    this.writeFile = (path, content, cb) => {
+      this._writtenFiles.push({ path, content })
+      cb(this._writeFileErr)
+    }
+
     this.createReadStream = sinon.stub().returns(this.readStream)
     this.createWriteStream = sinon.stub().returns(this.writeStream)
     this.on = sinon.stub().callsFake((evt, handler) => {
@@ -32,6 +39,20 @@ class Drive {
       this._readDirPath = path
       reader(this._readDirErr, this._readDirFiles)
     })
+
+    this.stat = (path, cb) => cb(this._statErr, { path })
+
+    this._unlinkPaths = []
+    this.unlink = (path, cb) => {
+      this._unlinkPaths.push(path)
+      cb(this._unlinkErr)
+    }
+
+    this._rmDirs = []
+    this.rmdir = (path, cb) => {
+      this._rmDirs.push(path)
+      cb(this._rmDirErr)
+    }
   }
 }
 
