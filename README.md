@@ -41,6 +41,18 @@ const { path, isFile, isDirectory, size, atime, ctime, mtime } = contents[0]
 
 ```
 
+### removePath
+
+Delete files and/or directories from archive
+
+```
+const { openArchive, removePath } = require('hyperdrive-helpers')
+
+const { archive } = await openArchive('/myarchive')
+await removePath(archive, ['/dane/cook', '/other/stuff'])
+
+```
+
 ### copyToFs
 
 Copy a file from a hyperdrive to the file system
