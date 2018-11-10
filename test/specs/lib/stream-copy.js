@@ -8,8 +8,8 @@ tap.test('should pipe from a to b', async t => {
   streamCopy(ins, outs)
 
   // resolve promise
-  t.ok(ins.events.end)
-  ins.events.end()
+  t.ok(outs.events.finish)
+  outs.events.finish()
 
   t.ok(ins.pipe.calledWith(outs))
   t.end()

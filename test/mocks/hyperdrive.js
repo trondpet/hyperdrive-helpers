@@ -5,6 +5,7 @@ class Drive {
   constructor () {
     this.discoveryKey = { toString: () => 'testDiscoveryKey' }
     this.key = { toString: () => 'testKey' }
+    this.metadata = { writable: true }
     this.events = {}
     this.readStream = new Stream()
     this.writeStream = new Stream()
@@ -25,8 +26,11 @@ class Drive {
         handler()
       }
     })
-    this.replicate = sinon.stub()
-    this.replicate.returns('archive is replicating')
+
+    this.replicate = opts => {
+      this._replicateOptions = opts
+      return 'archive is replicating'
+    }
 
     this.mkdir = sinon.stub()
     this.mkdir.callsFake((path, cb) => {

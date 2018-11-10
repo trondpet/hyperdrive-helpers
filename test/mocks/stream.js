@@ -10,6 +10,14 @@ class Stream {
   on (evt, handler) {
     this.events[evt] = handler
   }
+
+  once (evt, handler) {
+    this.events[evt] = handler
+  }
+
+  emit (name, data) {
+    this.events[name](data)
+  }
 }
 
 module.exports = Stream
