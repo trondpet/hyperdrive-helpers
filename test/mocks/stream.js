@@ -1,10 +1,11 @@
 const sinon = require('sinon')
 
 class Stream {
-  constructor () {
+  constructor (name) {
     this.events = {}
     this.destroy = sinon.stub()
     this.pipe = sinon.stub()
+    this.name = name
   }
 
   on (evt, handler) {

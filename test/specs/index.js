@@ -6,5 +6,6 @@ tap.test('exports the dang api', async t => {
   t.equals(typeof hyperHelpers.copyToFs, 'function')
   t.equals(typeof hyperHelpers.openArchive, 'function')
   t.equals(typeof hyperHelpers.readArchive, 'function')
+  t.equals(typeof hyperHelpers.removePath, 'function')
   t.end()
 })

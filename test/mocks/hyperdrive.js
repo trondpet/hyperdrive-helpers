@@ -7,8 +7,8 @@ class Drive {
     this.key = { toString: () => 'testKey' }
     this.metadata = { writable: true }
     this.events = {}
-    this.readStream = new Stream()
-    this.writeStream = new Stream()
+    this.readStream = new Stream('hyperReadStream')
+    this.writeStream = new Stream('hyperWriteStream')
 
     this._writtenFiles = []
     this._writeFileErr = null
