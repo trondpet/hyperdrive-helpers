@@ -1,13 +1,13 @@
 {
   "name": "hyperdrive-helpers",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Helper utils for working with hyperdrives",
   "main": "index.js",
   "scripts": {
     "cover": "tap test/specs/** --coverage-report=html",
     "lint": "standard",
     "lint-fix": "standard --fix",
-    "release": "npm test && standard-version && git push origin master && npm publish",
+    "release": "npm test && standard-version && git push -f origin master && npm publish",
     "test": "tap test/specs/**"
   },
   "repository": {
