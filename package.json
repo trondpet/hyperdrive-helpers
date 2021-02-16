@@ -1,6 +1,6 @@
 {
   "name": "hyperdrive-helpers",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Helper utils for working with hyperdrives",
   "main": "index.js",
   "scripts": {
