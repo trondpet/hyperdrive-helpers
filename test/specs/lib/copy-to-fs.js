@@ -5,9 +5,9 @@ const copyToFs = require('../../../lib/copy-to-fs')
 const StreamStub = require('../../mocks/stream')
 const DriveStub = require('../../mocks/hyperdrive')
 
-let archiveStub = new DriveStub()
-let writeStream = new StreamStub()
-let fsCreateWriteStub = sinon.stub(fs, 'createWriteStream')
+const archiveStub = new DriveStub()
+const writeStream = new StreamStub()
+const fsCreateWriteStub = sinon.stub(fs, 'createWriteStream')
 fsCreateWriteStub.callsFake(() => writeStream)
 
 tap.test('copyToFs should copy from archive to file system', async t => {

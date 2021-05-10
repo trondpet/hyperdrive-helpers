@@ -2,9 +2,9 @@ const tap = require('tap')
 const mockery = require('mockery')
 const DriveStub = require('../../mocks/hyperdrive')
 
-let fileList = []
-let parentFileList = []
-let statObject = { isFile: () => true }
+const fileList = []
+const parentFileList = []
+const statObject = { isFile: () => true }
 let ignoreFileAddedTo = null
 let removePath
 
@@ -53,7 +53,7 @@ tap.test('removePath should rm empty dirs', async t => {
   statObject.isDirectory = () => true
   statObject.isFile = () => false
   const archiveStub = new DriveStub()
-  await removePath(archiveStub, [ 'test' ])
+  await removePath(archiveStub, ['test'])
   t.equals(archiveStub._unlinkPaths.length, 0)
   t.equals(archiveStub._rmDirs.length, 1)
   t.equals(archiveStub._rmDirs[0], 'test')
@@ -66,7 +66,7 @@ tap.test('removePath should rm empty dirs', async t => {
 
 tap.test('removePath should by default _not_ add ignore file to dir when removing all files', async t => {
   const archiveStub = new DriveStub()
-  await removePath(archiveStub, [ '/parentfolder/test.file' ])
+  await removePath(archiveStub, ['/parentfolder/test.file'])
   t.equals(archiveStub._unlinkPaths.length, 1)
   t.equals(archiveStub._unlinkPaths[0], '/parentfolder/test.file')
   t.equals(archiveStub._rmDirs.length, 0)
@@ -76,7 +76,7 @@ tap.test('removePath should by default _not_ add ignore file to dir when removin
 
 tap.test('when enabled, removePath should add ignore file to dir when removing all files', async t => {
   const archiveStub = new DriveStub()
-  await removePath(archiveStub, [ '/parentfolder/test.file' ], { addIgnoreFileToEmptyDirs: true })
+  await removePath(archiveStub, ['/parentfolder/test.file'], { addIgnoreFileToEmptyDirs: true })
   t.equals(archiveStub._unlinkPaths.length, 1)
   t.equals(archiveStub._unlinkPaths[0], '/parentfolder/test.file')
   t.equals(archiveStub._rmDirs.length, 0)
@@ -87,7 +87,7 @@ tap.test('when enabled, removePath should add ignore file to dir when removing a
 tap.test('rejects on unlink error', async t => {
   const archiveStub = new DriveStub()
   archiveStub._unlinkErr = new Error()
-  t.rejects(removePath(archiveStub, [ '/parentfolder/test.file' ]))
+  t.rejects(removePath(archiveStub, ['/parentfolder/test.file']))
   t.end()
 })
 

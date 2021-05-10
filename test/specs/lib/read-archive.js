@@ -22,7 +22,7 @@ tap.test('readArchive should, um, read from the archive and return metadata on e
   }
 
   archiveStub.stat = (path, cb) => cb(null, statObj)
-  archiveStub._readDirFiles = [ 'famous-aj-pics', 'dane-cook.png', 'nude-tayne.jpg' ]
+  archiveStub._readDirFiles = ['famous-aj-pics', 'dane-cook.png', 'nude-tayne.jpg']
 
   const files = await readArchive(archiveStub, '/danathan')
   // read the dir w/correct path
@@ -57,7 +57,7 @@ tap.test('readArchive should handle error while stating single file', async t =>
   archiveStub.stat = (p, cb) => {
     return p === '/4d3d3d3/nude-tayne.jpg' ? cb(new Error('oh dang!')) : cb(null, statObj)
   }
-  archiveStub._readDirFiles = [ 'famous-aj-pics', 'nude-tayne.jpg', 'dane-cook.png' ]
+  archiveStub._readDirFiles = ['famous-aj-pics', 'nude-tayne.jpg', 'dane-cook.png']
 
   const files = await readArchive(archiveStub, '/4d3d3d3')
   // got info on all the files

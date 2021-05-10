@@ -21,7 +21,7 @@ tap.test('setup', async t => {
   mockery.registerMock('fs', {
     readdir: (dir, cb) => {
       if (dir === '/test1' || dir === '/test1/dang') {
-        cb(null, [ 'a.txt', 'b.txt', 'c.txt', 'dang' ])
+        cb(null, ['a.txt', 'b.txt', 'c.txt', 'dang'])
       } else {
         cb(null, [])
       }
@@ -44,7 +44,7 @@ tap.test('setup', async t => {
 
 tap.test('addToArchive should copy from file system to hyperdrive archive', async t => {
   readStream.pipe = ws => ws.events.finish()
-  await addToArchive(archiveStub, [ '/test1', '/test2', '/test3.txt', '/test4' ]).catch(e => console.error(e))
+  await addToArchive(archiveStub, ['/test1', '/test2', '/test3.txt', '/test4']).catch(e => console.error(e))
   t.ok(stubCreateReadStream.called)
 
   // wrote all the files but not non-empty dirs (cause the files are inside the dang dirs)
@@ -63,7 +63,7 @@ tap.test('addToArchive should copy from file system to hyperdrive archive', asyn
 
   // created the empty dirs
   t.ok(archiveStub.createWriteStream.called)
-  t.similar(archiveStub._mkDirs, [ '/test2', '/test4' ])
+  t.similar(archiveStub._mkDirs, ['/test2', '/test4'])
 
   t.end()
 })

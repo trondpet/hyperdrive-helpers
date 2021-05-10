@@ -6,7 +6,7 @@ const DriveStub = require('../../mocks/hyperdrive')
 let openArchive
 let archiveStub
 let hyperArgs
-let netArgs = {}
+const netArgs = {}
 
 const netStub = {
   join: sinon.stub().callsFake((key, options) => { netArgs.join = { key, options } }),
