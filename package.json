@@ -8,7 +8,7 @@
     "lint": "standard",
     "lint-fix": "standard --fix",
     "release": "npm test && standard-version && git push origin master && npm publish",
-    "test": "tap test/specs/**"
+    "test": "tap test/specs/** --no-coverage"
   },
   "repository": {
     "type": "git",
